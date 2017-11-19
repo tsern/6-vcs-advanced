@@ -1,0 +1,3 @@
+[submodule "external/6-vcs-advanced-submodel"]
+	path = external/6-vcs-advanced-submodel
+	url = https://github.com/tsern/6-vcs-advanced-submodel
