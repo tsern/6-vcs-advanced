@@ -1,0 +1,423 @@
+	Task 1
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git checkout -b architecture
+Switched to a new branch 'architecture'
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ mkdir assets
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ mkdir uploads
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ > index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git add index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git commit -m "add folders and index.html"
+[architecture c67103d] add folders and index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ 
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git push --set-upstream origin architecture
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 385 bytes | 385.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/tsern/6-vcs-advanced.git
+ * [new branch]      architecture -> architecture
+Branch 'architecture' set up to track remote branch 'architecture' from 'origin'.
+
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ touch assets/all.js assets/css.js
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git add assets/all.js assets/css.js
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git commit -a -m 'add assets/all.js assets/css.js'
+[architecture 8bd2d1f] add assets/all.js assets/css.js
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 assets/all.js
+ create mode 100644 assets/css.js
+
+ tania@TSLAP MINGW64 /f/hmwGIT (architecture)
+$  git push --set-upstream origin architecture
+
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 811 bytes | 811.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/tsern/6-vcs-advanced.git
+ * [new branch]      architecture -> architecture
+Branch 'architecture' set up to track remote branch 'architecture' from 'origin'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ echo "uploads/*" > .gitignore
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git add .gitignore
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git status
+On branch architecture
+Your branch is ahead of 'origin/architecture' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git commit -m "add gitignore"
+[architecture 9df30e7] add gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ 
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (architecture)
+$ git checkout master
+Switched to branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git merge architecture
+Updating a391319..9df30e7
+Fast-forward
+ .gitignore    | 1 +
+ assets/all.js | 0
+ assets/css.js | 0
+ index.html    | 0
+ 4 files changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ create mode 100644 assets/all.js
+ create mode 100644 assets/css.js
+ create mode 100644 index.html
+
+ 
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git branch -D architecture
+Deleted branch architecture (was 9df30e7).
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git show-branch -a
+* [master] add gitignore
+ ! [origin/architecture] add folders and index.html
+  ! [origin/master] add gitignore
+---
+* + [master] add gitignore
+* + [master^] add assets/all.js assets/css.js
+*++ [origin/architecture] add folders and index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$  git push origin --delete architecture
+To https://github.com/tsern/6-vcs-advanced.git
+ - [deleted]         architecture
+
+
+	Task 2 
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git checkout -b task2
+Switched to a new branch 'task2'
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git add assets/css.js
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git add index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -m 'task2 first change'
+[master 521c91c] task2 first change
+ 2 files changed, 2 insertions(+)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'task2 second change'
+[master f3fb138] task2 second change
+ 2 files changed, 2 deletions(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'task2 third change'
+[master f2c88cb] task2 third change
+ 2 files changed, 2 insertions(+)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git checkout task2
+Switched to branch 'task2'
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Fast-forwarded task2 to master.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git add index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git commit -m 'task2 index.html changes'
+[task2 5003a0f] task2 index.html changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git add assets/css.js
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git commit -m 'task2 css.js change'
+[task2 14681f2] task2 css.js change
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (task2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git merge task2
+Updating f2c88cb..14681f2
+Fast-forward
+ assets/css.js | 2 +-
+ index.html    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git branch -D task2
+Deleted branch task2 (was 14681f2).
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git push
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 610 bytes | 610.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/tsern/6-vcs-advanced.git
+   f2c88cb..14681f2  master -> master
+
+   
+   Task 3
+   
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git add task3.txt
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'task3 first change'
+[master 786084e] task3 first change
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 task3.txt
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'task3 second change'
+[master af46cef] task3 second change
+ 1 file changed, 1 deletion(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git tag v1
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git tag
+v1
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git push origin v1
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/tsern/6-vcs-advanced.git
+ * [new tag]         v1 -> v1
+
+	Task 4
+	
+tania@TSLAP MINGW64 /f/hmwGIT
+$ git clone https://github.com/tsern/6-vcs-advanced-submodel.git
+Cloning into '6-vcs-advanced-submodel'...
+warning: You appear to have cloned an empty repository.
+
+tania@TSLAP MINGW64 /f/hmwGIT
+$ cd 6-vcs-advanced-submodel/
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced-submodel (master)
+$ git add index1.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced-submodel (master)
+$ git commit -m 'task4 new index'
+[master (root-commit) eb2d9ac] task4 new index
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index1.html
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced-submodel (master)
+$ git push
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 216 bytes | 216.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/tsern/6-vcs-advanced-submodel.git
+ * [new branch]      master -> master
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced-submodel (master)
+$ cd f:/hmwGIT/6-vcs-advanced/
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ mkdir external
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ cd external
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced/external (master)
+$ git submodule add https://github.com/tsern/6-vcs-advanced-submodel
+Cloning into 'F:/hmwGIT/6-vcs-advanced/external/6-vcs-advanced-submodel'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+warning: LF will be replaced by CRLF in .gitmodules.
+The file will have its original line endings in your working directory.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced/external (master)
+$ git commit -m 'add submodule'
+[master d50f4f4] add submodule
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 external/6-vcs-advanced-submodel
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced/external (master)
+$ git push
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 551 bytes | 551.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/tsern/6-vcs-advanced.git
+   af46cef..d50f4f4  master -> master
+
+  Task 5
+  
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git checkout -b gh-pages
+Switched to a new branch 'gh-pages'
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$ echo "Hello World" > index.html
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$ git commit -a -m 'change index.html'
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+[gh-pages 7d03912] change index.html
+ 1 file changed, 1 insertion(+)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$  git push --set-upstream origin gh-pages
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/tsern/6-vcs-advanced.git
+ * [new branch]      gh-pages -> gh-pages
+Branch 'gh-pages' set up to track remote branch 'gh-pages' from 'origin'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$ git commit -a -m 'second change index.html'
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+[gh-pages ded4ab0] second change index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/tsern/6-vcs-advanced.git
+   7d03912..ded4ab0  gh-pages -> gh-pages
+
+ see results: https://tsern.github.io/6-vcs-advanced/
+
+ Task 6
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (gh-pages)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git add file.txt
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'task6 add file.txt'
+[master f6bb4a7] task6 add file.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git checkout -b branch
+Switched to a new branch 'branch'
+
+ 
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (branch)
+$ git commit -a -m 'test in file.txt'
+[branch f0c680b] test in file.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (branch)
+$ git push --set-upstream origin branch
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 512 bytes | 512.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/tsern/6-vcs-advanced.git
+ * [new branch]      branch -> branch
+Branch 'branch' set up to track remote branch 'branch' from 'origin'.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git commit -a -m 'change in master branch'
+[master e53673b] change in master branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master)
+$ git merge branch
+Auto-merging file.txt
+CONFLICT (content): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare emerge vimdiff
+Merging:
+file.txt
+
+Normal merge conflict for 'file.txt':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+tania@TSLAP MINGW64 /f/hmwGIT/6-vcs-advanced (master|MERGING)
+$ git commit -m 'merged to master'
+[master 98b2723] merged to master
+
+
+
+
+ 
+
+
